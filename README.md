@@ -5,7 +5,7 @@
 OMRON製環境センサ(2JCIE-BU01)のデータをWindows C#.netで受信するWindowsフォームプログラムです。  
 2JCIE-BU01を使用したシステムを構築する際の参考資料(サンプルプログラム)としてお使いください。
 
-![全体.png](/img/全体.png)
+![全体.PNG](/img/全体.PNG)
 
 ## [2]使用方法
 ### (1) 使用COM番号の確認  
@@ -15,7 +15,7 @@ COM番号は、本アプリを使用する際に必要になります。
 1. 2JCIE-BU01をWindowsPCに指して、デバイスマネージャを開いてください。  
 1. 2JCIE-BU01で使用しているCOM番号を確認してください。  
 参考) デバイスマネージャ画面  
-![com確認.png](/img/com確認.png)
+![com確認.PNG](/img/com確認.PNG)
 
 ### (2) 起動方法  
 
@@ -23,7 +23,7 @@ COM番号は、本アプリを使用する際に必要になります。
 
 ### (3) 操作説明
 
-![プログラム画面.png](/img/プログラム画面.png)
+![プログラム画面.PNG](/img/プログラム画面.PNG)
 
 ## (参考) 通信仕様解説
 
@@ -42,7 +42,7 @@ https://www.fa.omron.co.jp/data_pdf/mnu/cdsc-016a-web1_2jcie-bu01.pdf?id=3724
 2JCIE-BU01は受け取ったコマンドに対応するデータを送信(Responseデータ)します。
 
 参考 : 4.2. Communication procedure  
-![4_2_Communication_procedure.png](/img/4_2_Communication_procedure.png)
+![4_2_Communication_procedure.PNG](/img/4_2_Communication_procedure.PNG)
 
 
 
@@ -53,14 +53,14 @@ Command/Responseデータはソースコード上、バイナリ型の配列と�
 
 
 参考 : 4.3.1 Common frame format、4.3.2 CRC-16 calculation  
-![4_3_1_Common_frame_format.png](/img/4_3_1_Common_frame_format.png)  
-![4_3_2_CRC-16_calculation.png](/img/4_3_2_CRC-16_calculation.png)
+![4_3_1_Common_frame_format.PNG](/img/4_3_1_Common_frame_format.PNG)  
+![4_3_2_CRC-16_calculation.PNG](/img/4_3_2_CRC-16_calculation.PNG)
 
 ### (3) Commandデータ仕様について
 **1. CommandデータのPayload部の仕様は以下の通りです。**
 
 参考 : 4.3.3 Payload frame format [Command from Host-Controller]  
-![4_3_3_Payload_frame_format.png](/img/4_3_3_Payload_frame_format.PNG)
+![4_3_3_Payload_frame_format.PNG](/img/4_3_3_Payload_frame_format.PNG)
 
 **2. 役割と実データ例は以下の通りです。**
 
@@ -96,7 +96,7 @@ serialPort1.Write(param.ToArray(), 0, param.ToArray().Length);
 **1. ResponseデータのPayload部の仕様は以下の通りです。**
 
 参考 : 4.3.4 Payload frame format [Normal Response from 2JCIE-BU01]  
-![4_3_4_Payload_frame_format.png](/img/4_3_4_Payload_frame_format.PNG)
+![4_3_4_Payload_frame_format.PNG](/img/4_3_4_Payload_frame_format.PNG)
 
 **2. 役割と実データ例は以下の通りです。**  
 
@@ -130,12 +130,12 @@ serialPort1.Write(param.ToArray(), 0, param.ToArray().Length);
 |25|CRC-16|0x38|計算したCRC値の２バイト目。|
 
 参考 : 4.5.2 Latest sensing data (Address: 0x5012)  
-![4_5_2_Latest_sensing_data.png](/img/4_5_2_Latest_sensing_data.PNG)  
+![4_5_2_Latest_sensing_data.PNG](/img/4_5_2_Latest_sensing_data.PNG)  
 
 **3. 取得したデータの単位は以下の通りです。**
 
 参考 : 5.1. Output range  
-![5_1_Output_range.png](/img/5_1_Output_range.PNG)  
+![5_1_Output_range.PNG](/img/5_1_Output_range.PNG)  
 
 
 **4.実際のサンプルプログラムの受信及び単位変換処理は以下の通りです。**  
